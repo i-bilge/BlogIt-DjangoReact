@@ -1,9 +1,16 @@
 import React from 'react'
 
-function ArticleList() {
+function ArticleList(props) {
   return (
     <div>
-        List of Articles
+      {props.articles && props.articles.map(article => {
+        return(
+          <div key={article.id}>
+            <h1>{article.title}</h1>
+            <p>{article.description}</p>
+          </div>
+        )
+      })}
     </div>
   )
 }
