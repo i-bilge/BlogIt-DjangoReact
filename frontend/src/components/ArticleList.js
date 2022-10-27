@@ -1,6 +1,10 @@
 import React from 'react'
 
 function ArticleList(props) {
+  const editBtn = (article)=>{
+    props.editBtn(article)
+  }
+
   return (
     <div>
       {props.articles && props.articles.map(article => {
@@ -10,7 +14,7 @@ function ArticleList(props) {
             <p>{article.description}</p>
 
             <div>
-                <button className='btn'>Update</button>
+                <button className='btn' onClick={()=>editBtn(article)}>Update</button>
                 <button className='btn'>Delete</button>
             </div>
 
